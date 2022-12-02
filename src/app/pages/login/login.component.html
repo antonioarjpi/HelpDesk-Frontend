@@ -1,0 +1,19 @@
+<div class="container">
+    <mat-card class="card mat-elevation-z8">
+        <mat-card-content>
+            <h1>Help Desk - Login</h1>
+            <form class="form">
+                <img mat-card-image src="assets/img/home-image.png" alt="Image Home Help Desk">
+                <mat-form-field appearance="fill">
+                    <mat-label>E-mail</mat-label>
+                    <input [formControl]="email" required [(ngModel)]="creds.email" name="email" placeholder="Ex. examplo@email.com"  matInput>
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Senha</mat-label>
+                    <input [formControl]="password" required [(ngModel)]="creds.password" name="password" matInput type="password">
+                </mat-form-field>
+                <button (click)="login()" [disabled]="!validateFields()" mat-raised-button color="primary" type="submit">Entrar</button>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

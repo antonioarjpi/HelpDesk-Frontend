@@ -1,0 +1,33 @@
+.container{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(180deg, rgba(2, 0, 36, 1) 0%, rgba(37, 97, 207, 1) 0%, rgba(0, 212, 255, 1) 100%);
+}
+
+.card{
+    margin: auto;
+    border-radius: 10px;
+    width: 25%;
+}
+
+h1{
+    text-align: center;
+    margin: 30px 0 15px 0;
+    font-weight: 550;
+}
+
+.form{
+    display: grid;
+    width: 100%;
+}
+
+.form img{
+    width: 200px;
+    margin: 30px auto 30px auto;
+}
+
+.card button{
+
+    margin-bottom: 10px;
+}
