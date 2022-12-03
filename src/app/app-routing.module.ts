@@ -5,6 +5,7 @@ import { NavComponent } from "./components/nav/nav.component";
 import { HomeComponent } from "./pages/home/home.component";
 import { LoginComponent } from "./pages/login/login.component";
 import { TechnicianComponent } from "./pages/technician/list/technician.component";
+import { TechnicianCreateComponent } from "./pages/technician/technician-create/technician-create.component";
 
 const routes: Routes = [
   {
@@ -23,6 +24,10 @@ const routes: Routes = [
       {
         path: "tecnicos",
         component: TechnicianComponent,
+      },
+      {
+        path: "tecnicos/criar",
+        component: TechnicianCreateComponent,
       },
     ],
   },

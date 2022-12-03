@@ -20,7 +20,9 @@
     "@angular/platform-browser-dynamic": "~13.2.0",
     "@angular/router": "~13.2.0",
     "@auth0/angular-jwt": "^5.1.0",
+    "ngx-mask": "^14.2.4",
     "ngx-toastr": "^14.0.0",
+    "remove": "^0.1.5",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
