@@ -29,6 +29,7 @@ import { HomeComponent } from "./pages/home/home.component";
 import { TechnicianComponent } from "./pages/technician/list/technician.component";
 import { LoginComponent } from "./pages/login/login.component";
 import { ToastrModule } from "ngx-toastr";
+import { AuthInterceptorProvider } from "./interceptors/auth.interceptor";
 
 @NgModule({
   declarations: [
@@ -67,7 +68,7 @@ import { ToastrModule } from "ngx-toastr";
       progressBar: true,
     }),
   ],
-  providers: [],
+  providers: [AuthInterceptorProvider],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
