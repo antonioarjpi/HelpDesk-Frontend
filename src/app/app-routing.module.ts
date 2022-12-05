@@ -6,10 +6,11 @@ import { HomeComponent } from "./pages/home/home.component";
 import { LoginComponent } from "./pages/login/login.component";
 import { TechnicianComponent } from "./pages/technician/list/technician.component";
 import { TechnicianCreateComponent } from "./pages/technician/technician-create/technician-create.component";
+import { TechnicianUpdateComponent } from "./pages/technician/technician-update/technician-update.component";
 
 const routes: Routes = [
   {
-    path: "", 
+    path: "",
     component: NavComponent,
     canActivate: [AuthGuard],
     children: [
@@ -28,6 +29,10 @@ const routes: Routes = [
       {
         path: "tecnicos/criar",
         component: TechnicianCreateComponent,
+      },
+      {
+        path: "tecnicos/atualizar/:id",
+        component: TechnicianUpdateComponent,
       },
     ],
   },

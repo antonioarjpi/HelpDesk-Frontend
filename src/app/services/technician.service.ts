@@ -15,7 +15,15 @@ export class TechnicianService {
     return this.http.get<Technician[]>(`${API_CONFIG.baseUrl}/technical`)
   }
 
+  findById(id: any): Observable<Technician>{
+    return this.http.get<Technician>(`${API_CONFIG.baseUrl}/technical/${id}`)
+  }
+
   create(technician: Technician): Observable<Technician> {
     return this.http.post<Technician>(`${API_CONFIG.baseUrl}/technical`, technician)
+  }
+
+  update(technician: Technician): Observable<Technician> {
+    return this.http.put<Technician>(`${API_CONFIG.baseUrl}/technical/${technician.id}`, technician)
   }
 }
