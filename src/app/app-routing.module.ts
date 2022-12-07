@@ -6,6 +6,7 @@ import { HomeComponent } from "./pages/home/home.component";
 import { LoginComponent } from "./pages/login/login.component";
 import { TechnicianComponent } from "./pages/technician/list/technician.component";
 import { TechnicianCreateComponent } from "./pages/technician/technician-create/technician-create.component";
+import { TechnicianDeleteComponent } from "./pages/technician/technician-delete/technician-delete.component";
 import { TechnicianUpdateComponent } from "./pages/technician/technician-update/technician-update.component";
 
 const routes: Routes = [
@@ -33,6 +34,10 @@ const routes: Routes = [
       {
         path: "tecnicos/atualizar/:id",
         component: TechnicianUpdateComponent,
+      },
+      {
+        path: "tecnicos/deletar/:id",
+        component: TechnicianDeleteComponent,
       },
     ],
   },
