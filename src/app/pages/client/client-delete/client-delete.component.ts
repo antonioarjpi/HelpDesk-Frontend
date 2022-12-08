@@ -43,7 +43,6 @@ export class ClientDeleteComponent implements OnInit {
       this.clientRole = response.profiles.indexOf("CLIENT");
       this.tech = response.profiles.indexOf("TECH");
       this.client = response;
-      
     });
   }
 
@@ -58,30 +57,4 @@ export class ClientDeleteComponent implements OnInit {
       }
     );
   }
-
-  isAdmin(): boolean {
-    if(this.client.profiles.indexOf("ADMIN") == 1){
-      return true;
-    }else{
-      return false;
-    }
-  }
-
-  isClient(): boolean {
-    if (this.client.profiles.indexOf('CLIENT')) {
-      console.log('deade', this.client.profiles)
-      return true;
-    }else{
-      return false;
-    }
-  }
-
-  isTech(): boolean {
-    if (this.client.profiles.indexOf("TECH") == 1) {
-      return true;
-    }else{
-      return false;
-    }
-  }
-
 }

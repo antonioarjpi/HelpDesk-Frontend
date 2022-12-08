@@ -12,6 +12,7 @@ import { TechnicianUpdateComponent } from "./pages/technician/technician-update/
 import { ClientCreateComponent } from "./pages/client/client-create/client-create.component";
 import { ClientUpdateComponent } from "./pages/client/client-update/client-update.component";
 import { ClientDeleteComponent } from "./pages/client/client-delete/client-delete.component";
+import { CalledListComponent } from "./pages/called/called-list/called-list.component";
 
 const routes: Routes = [
   {
@@ -58,6 +59,10 @@ const routes: Routes = [
       {
         path: "clientes/deletar/:id",
         component: ClientDeleteComponent,
+      },
+      {
+        path: "chamados",
+        component: CalledListComponent,
       },
     ],
   },

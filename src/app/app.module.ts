@@ -37,6 +37,7 @@ import { ClientListComponent } from './pages/client/client-list/client-list.comp
 import { ClientCreateComponent } from './pages/client/client-create/client-create.component';
 import { ClientDeleteComponent } from './pages/client/client-delete/client-delete.component';
 import { ClientUpdateComponent } from './pages/client/client-update/client-update.component';
+import { CalledListComponent } from './pages/called/called-list/called-list.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { ClientUpdateComponent } from './pages/client/client-update/client-updat
     ClientListComponent,
     ClientCreateComponent,
     ClientDeleteComponent,
-    ClientUpdateComponent
+    ClientUpdateComponent,
+    CalledListComponent
   ],
   imports: [
     BrowserModule,

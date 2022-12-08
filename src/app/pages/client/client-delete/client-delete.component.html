@@ -7,10 +7,10 @@
 
         <form class="form">
             <section class="section">
-                <mat-checkbox [checked]="isAdmin()" class="margin" color="primary" disabled="true">Admin</mat-checkbox>
-                <mat-checkbox [checked]="isClient()" class="margin" color="primary" disabled="true">Cliente
+                <mat-checkbox [checked]="admin == 1" class="margin" color="primary" disabled="true">Admin</mat-checkbox>
+                <mat-checkbox [checked]="clientRole == 1" class="margin" color="primary" disabled="true">Cliente
                 </mat-checkbox>
-                <mat-checkbox [checked]="isTech()" class="margin" color="primary" disabled="true">Tecnico</mat-checkbox>
+                <mat-checkbox [checked]="tech == 1" class="margin" color="primary" disabled="true">Tecnico</mat-checkbox>
             </section>
 
             <mat-form-field class="fullWidth" appearance="legacy">

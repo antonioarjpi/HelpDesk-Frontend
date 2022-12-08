@@ -39,6 +39,7 @@ export class ClientUpdateComponent implements OnInit {
   ngOnInit(): void {
     this.client.id = this.route.snapshot.paramMap.get('id');
     this.findById();
+    this.client.profiles = [];
   }
 
   findById(): void {
@@ -46,7 +47,8 @@ export class ClientUpdateComponent implements OnInit {
       this.admin = response.profiles.indexOf('ADMIN');
       this.clientRole = response.profiles.indexOf('CLIENT');
       this.tech = response.profiles.indexOf('TECH');
-      response.profiles = [];
+      console.log(response)
+
       this.client = response;
     })
   }
@@ -81,29 +83,5 @@ export class ClientUpdateComponent implements OnInit {
     return (
       this.nome.valid && this.cpf.valid && this.email.valid && this.senha.valid
     );
-  }
-
-  isAdmin(): boolean {
-    if(this.admin == 1){
-      return true;
-    }else{
-      return false;
-    }
-  }
-
-  isClient(): boolean {
-    if (this.clientRole == 1) {
-      return true;
-    }else{
-      return false;
-    }
-  }
-
-  isTech(): boolean {
-    if (this.tech == 1) {
-      return true;
-    }else{
-      return false;
-    }
   }
 }
