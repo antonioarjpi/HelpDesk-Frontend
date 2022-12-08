@@ -33,6 +33,10 @@ import { AuthInterceptorProvider } from "./interceptors/auth.interceptor";
 import { TechnicianCreateComponent } from "./pages/technician/technician-create/technician-create.component";
 import { TechnicianUpdateComponent } from './pages/technician/technician-update/technician-update.component';
 import { TechnicianDeleteComponent } from './pages/technician/technician-delete/technician-delete.component';
+import { ClientListComponent } from './pages/client/client-list/client-list.component';
+import { ClientCreateComponent } from './pages/client/client-create/client-create.component';
+import { ClientDeleteComponent } from './pages/client/client-delete/client-delete.component';
+import { ClientUpdateComponent } from './pages/client/client-update/client-update.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +48,11 @@ import { TechnicianDeleteComponent } from './pages/technician/technician-delete/
     LoginComponent,
     TechnicianCreateComponent,
     TechnicianUpdateComponent,
-    TechnicianDeleteComponent
+    TechnicianDeleteComponent,
+    ClientListComponent,
+    ClientCreateComponent,
+    ClientDeleteComponent,
+    ClientUpdateComponent
   ],
   imports: [
     BrowserModule,

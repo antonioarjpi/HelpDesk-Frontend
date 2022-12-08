@@ -14,7 +14,6 @@ export class TechnicianComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   displayedColumns: string[] = [
-    "id",
     "name",
     "cpf",
     "email",
