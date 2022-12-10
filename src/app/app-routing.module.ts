@@ -13,6 +13,8 @@ import { ClientCreateComponent } from "./pages/client/client-create/client-creat
 import { ClientUpdateComponent } from "./pages/client/client-update/client-update.component";
 import { ClientDeleteComponent } from "./pages/client/client-delete/client-delete.component";
 import { CalledListComponent } from "./pages/called/called-list/called-list.component";
+import { CalledCreateComponent } from "./pages/called/called-create/called-create.component";
+import { CalledUpdateComponent } from "./pages/called/called-update/called-update.component";
 
 const routes: Routes = [
   {
@@ -63,6 +65,14 @@ const routes: Routes = [
       {
         path: "chamados",
         component: CalledListComponent,
+      },
+      {
+        path: "chamados/criar",
+        component: CalledCreateComponent,
+      },
+      {
+        path: "chamados/atualizar/:id",
+        component: CalledUpdateComponent,
       },
     ],
   },

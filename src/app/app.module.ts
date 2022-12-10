@@ -38,6 +38,8 @@ import { ClientCreateComponent } from './pages/client/client-create/client-creat
 import { ClientDeleteComponent } from './pages/client/client-delete/client-delete.component';
 import { ClientUpdateComponent } from './pages/client/client-update/client-update.component';
 import { CalledListComponent } from './pages/called/called-list/called-list.component';
+import { CalledCreateComponent } from './pages/called/called-create/called-create.component';
+import { CalledUpdateComponent } from './pages/called/called-update/called-update.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +56,9 @@ import { CalledListComponent } from './pages/called/called-list/called-list.comp
     ClientCreateComponent,
     ClientDeleteComponent,
     ClientUpdateComponent,
-    CalledListComponent
+    CalledListComponent,
+    CalledCreateComponent,
+    CalledUpdateComponent
   ],
   imports: [
     BrowserModule,

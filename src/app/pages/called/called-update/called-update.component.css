@@ -1,0 +1,51 @@
+.client-create {
+    width: 35rem;
+    margin: auto;
+    padding: 1rem;
+    border-radius: .6rem;
+    background-color: #ffff;
+}
+
+.header {
+    text-align: center;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+}
+
+.fullWidth {
+    width: 100%;
+}
+
+h1,
+p {
+    text-align: center;
+}
+
+img {
+    margin: auto;
+    width: 15rem;
+}
+
+.section {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer button {
+    margin-top: .5rem;
+    width: 30%;
+
+}
+
+p {
+    margin-top: 4rem;
+    opacity: .5;
+}
+
+mat-icon {
+    opacity: .8;
+}

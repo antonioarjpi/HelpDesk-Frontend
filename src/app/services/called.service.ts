@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { API_CONFIG } from '../config/api.config';
 import { Observable } from 'rxjs';
 import { Called } from '../models/called';
+import { CalledCreate } from 'src/app/models/called';
 
 @Injectable({
   providedIn: 'root'
@@ -19,12 +20,12 @@ export class CalledService {
     return this.http.get<Called>(`${API_CONFIG.baseUrl}/calleds/${id}`)
   }
 
-  create(called: Called): Observable<Called> {
-    return this.http.post<Called>(`${API_CONFIG.baseUrl}/calleds`, called)
+  create(called: CalledCreate): Observable<CalledCreate> {
+    return this.http.post<CalledCreate>(`${API_CONFIG.baseUrl}/calleds`, called)
   }
 
-  update(called: Called): Observable<Called> {
-    return this.http.put<Called>(`${API_CONFIG.baseUrl}/calleds/${called.id}`, called)
+  update(called: CalledCreate): Observable<CalledCreate> {
+    return this.http.put<CalledCreate>(`${API_CONFIG.baseUrl}/calleds/${called.id}`, called)
   }
 
   delete(id: any): Observable<Called>{

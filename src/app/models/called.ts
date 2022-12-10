@@ -13,3 +13,13 @@ export interface Called {
   clientName: string;
   clientEmail: string;
 }
+
+export interface CalledCreate {
+  id?: string;
+  title: string;
+  observation: string;
+  priority: number;
+  status: number;
+  technician: string;
+  client: string;
+}
