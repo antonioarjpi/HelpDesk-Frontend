@@ -1,0 +1,18 @@
+<h1 mat-dialog-title>Detalhes do chamado</h1>
+<div mat-dialog-content>
+    <div class="col-12 col-md-12">
+        <div class="info">
+            <label><strong>Título: </strong>{{called.title}}</label>
+            <label><strong>Observação: </strong>{{called.observation}}</label>
+            <label><strong>Cliente: </strong>{{called.clientName}}</label>
+            <label><strong>Técnico: </strong>{{called.technicianName}}</label>
+            <label><strong>Status: </strong>{{returnStatus(called.status)}}</label>
+            <label><strong>Prioridade: </strong>{{returnPriority(called.priority)}}</label>
+            <label><strong>Abertura do chamado: </strong>{{called.openDate}}</label>
+            <label><strong>Data de fechamento: </strong>{{called.closeDate == null ? ' - ' : called.closeDate}}</label>
+        </div>
+    </div>
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button class="button" (click)="cancelDialog()">Fechar</button>
+</div>

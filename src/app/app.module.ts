@@ -21,6 +21,7 @@ import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatSnackBarModule } from "@angular/material/snack-bar";
 import { MatTableModule } from "@angular/material/table";
 import { MatToolbarModule } from "@angular/material/toolbar";
+import { MatDialogModule } from "@angular/material/dialog";
 
 //Componentes
 import { HeaderComponent } from "./components/header/header.component";
@@ -40,6 +41,7 @@ import { ClientUpdateComponent } from './pages/client/client-update/client-updat
 import { CalledListComponent } from './pages/called/called-list/called-list.component';
 import { CalledCreateComponent } from './pages/called/called-create/called-create.component';
 import { CalledUpdateComponent } from './pages/called/called-update/called-update.component';
+import { CalledViewComponent } from './pages/called/called-view/called-view.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +60,8 @@ import { CalledUpdateComponent } from './pages/called/called-update/called-updat
     ClientUpdateComponent,
     CalledListComponent,
     CalledCreateComponent,
-    CalledUpdateComponent
+    CalledUpdateComponent,
+    CalledViewComponent
   ],
   imports: [
     BrowserModule,
@@ -67,6 +70,7 @@ import { CalledUpdateComponent } from './pages/called/called-update/called-updat
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    
     // Angular Material
     MatFormFieldModule,
     MatPaginatorModule,
@@ -82,6 +86,8 @@ import { CalledUpdateComponent } from './pages/called/called-update/called-updat
     MatIconModule,
     MatListModule,
     MatCardModule,
+    MatDialogModule,
+
     ToastrModule.forRoot({
       timeOut: 4000,
       closeButton: true,

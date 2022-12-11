@@ -1,0 +1,26 @@
+.info {
+    display: grid;
+    margin-bottom: 1.5rem;
+    align-items: center;
+}
+
+.info-label {
+    padding-right: 1rem;
+    font-size: .625rem;
+    font-weight: 500;
+    color: #08090a;
+    text-align: right;
+    text-transform: uppercase;
+    white-space: normal;
+    width: 3.0rem;
+}
+
+.info-content {
+    width: 66%;
+    min-width: 66%;
+    font-size: .875rem;
+}
+
+.button {
+    background-color: #FF4786;
+}

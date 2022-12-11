@@ -45,8 +45,8 @@
                     <a routerLink="/chamados/atualizar/{{element.id}}">
                         <i class="material-icons edit">edit</i>
                     </a>
-                    <a routerLink="/chamados/deletar/{{element.id}}">
-                        <i class="material-icons delete">delete</i>
+                    <a (click)="openDialog(element.id)" style="cursor: pointer;">
+                        <i class="material-icons delete">visibility</i>
                     </a>
                 </td>
             </ng-container>

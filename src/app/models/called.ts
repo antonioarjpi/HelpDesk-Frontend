@@ -1,8 +1,8 @@
 export interface Called {
   id?: string;
   title: string;
-  openDate: Date;
-  closeDate: Date;
+  openDate: string;
+  closeDate: string;
   observation: string;
   priority: number;
   status: number;

@@ -3,6 +3,8 @@ import { MatPaginator } from "@angular/material/paginator";
 import { MatTableDataSource } from "@angular/material/table";
 import { CalledService } from "src/app/services/called.service";
 import { Called } from "./../../../models/called";
+import { MatDialog } from '@angular/material/dialog';
+import { CalledViewComponent } from "../called-view/called-view.component";
 
 @Component({
   selector: "app-called-list",
@@ -26,11 +28,23 @@ export class CalledListComponent implements OnInit {
 
   dataSource = new MatTableDataSource<Called>(this.ELEMENT_DATA);
 
-  constructor(private service: CalledService) {}
+  constructor(private service: CalledService, private dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.findAll();
   }
+
+  openDialog(id: string): void {
+    const dialogRef = this.dialog.open(CalledViewComponent , {
+      data: id,
+      width: '780px'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
+
 
   findAll() {
     this.service.findAll().subscribe((response) => {
