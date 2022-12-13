@@ -21,6 +21,7 @@
     "@angular/router": "^14.2.12",
     "@auth0/angular-jwt": "^5.1.0",
     "bootstrap": "^5.2.3",
+    "ngx-mask": "^14.2.4",
     "ngx-toastr": "^14.0.0",
     "remove": "^0.1.5",
     "rxjs": "~7.5.0",

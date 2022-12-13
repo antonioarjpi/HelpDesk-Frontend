@@ -42,6 +42,7 @@ import { CalledListComponent } from './pages/called/called-list/called-list.comp
 import { CalledCreateComponent } from './pages/called/called-create/called-create.component';
 import { CalledUpdateComponent } from './pages/called/called-update/called-update.component';
 import { CalledViewComponent } from './pages/called/called-view/called-view.component';
+import { NgxMaskModule } from 'ngx-mask';
 
 
 @NgModule({
@@ -71,7 +72,7 @@ import { CalledViewComponent } from './pages/called/called-view/called-view.comp
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    
+
     // Angular Material
     MatFormFieldModule,
     MatPaginatorModule,
@@ -94,10 +95,10 @@ import { CalledViewComponent } from './pages/called/called-view/called-view.comp
       closeButton: true,
       progressBar: true,
     }),
+    NgxMaskModule.forRoot(),
 
-  
   ],
   providers: [AuthInterceptorProvider],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

@@ -21,7 +21,7 @@
 
             <mat-form-field class="fullWidth" appearance="legacy">
                 <mat-label>CPF</mat-label>
-                <input [(ngModel)]="client.cpf" name="cpf" [formControl]="cpf" required matInput>
+                <input [(ngModel)]="client.cpf" name="cpf" [formControl]="cpf" required matInput mask="999.999.999-99" [showMaskTyped]="false" [dropSpecialCharacters]="false">
                 <mat-icon matSuffix>pin </mat-icon>
             </mat-form-field>
 
