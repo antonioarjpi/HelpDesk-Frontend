@@ -25,16 +25,16 @@ export class TechnicianUpdateComponent implements OnInit {
   cpf: FormControl = new FormControl(null, Validators.required);
   email: FormControl = new FormControl(null, Validators.email);
   senha: FormControl = new FormControl(null, Validators.minLength(6));
-  admin: number;
-  tech: number;
-  client: number;
+  admin: boolean;
+  tech: boolean;
+  client: boolean;
 
   constructor(
     private service: TechnicianService,
     private toast: ToastrService,
     private router: Router,
     private route: ActivatedRoute
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.technician.id = this.route.snapshot.paramMap.get("id");
@@ -43,16 +43,37 @@ export class TechnicianUpdateComponent implements OnInit {
 
   findById(): void {
     this.service.findById(this.technician.id).subscribe((response) => {
-      this.admin = response.profiles.indexOf('ADMIN');
-      this.client = response.profiles.indexOf('CLIENT');
-      this.tech = response.profiles.indexOf('TECH');
+
+      const profiles = response.profiles;
       response.profiles = [];
+      let prof = [];
+
+      if (profiles.indexOf('ADMIN') != -1) {
+        prof.push(0);
+        this.admin = true;
+      }
+      if (profiles.indexOf('CLIENT') != -1) {
+        prof.push(1);
+        this.client = true;
+      }
+      if (profiles.indexOf('TECH') != -1) {
+        prof.push(2);
+
+        this.tech = true;
+      }
+
+      response.profiles = prof;
       this.technician = response;
 
     });
   }
 
   update(): void {
+
+    if (!this.validaCampos()) {
+      return;
+    }
+
     this.service.update(this.technician).subscribe(
       () => {
         this.toast.success("Técnico atualizado com sucesso", "Atualização");
@@ -83,31 +104,7 @@ export class TechnicianUpdateComponent implements OnInit {
 
   validaCampos(): boolean {
     return (
-      this.nome.valid && this.cpf.valid && this.email.valid && this.senha.valid
+      this.nome.valid && this.cpf.valid && this.email.valid
     );
-  }
-
-  isAdmin(): boolean {
-    if(this.admin == 1){
-      return true;
-    }else{
-      return false;
-    }
-  }
-
-  isClient(): boolean {
-    if (this.client == 1) {
-      return true;
-    }else{
-      return false;
-    }
-  }
-
-  isTech(): boolean {
-    if (this.tech == 1) {
-      return true;
-    }else{
-      return false;
-    }
   }
 }

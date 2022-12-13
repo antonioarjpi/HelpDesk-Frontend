@@ -12,7 +12,7 @@ import { Technician } from "./../../../models/techinician";
 })
 
 export class TechnicianCreateComponent implements OnInit {
-  
+
   technician: Technician = {
     id: "",
     name: "",
@@ -32,11 +32,16 @@ export class TechnicianCreateComponent implements OnInit {
     private service: TechnicianService,
     private toast: ToastrService,
     private router: Router
-  ) {}
+  ) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   create(): void {
+
+    if (!this.validaCampos()) {
+      return;
+    }
+
     this.service.create(this.technician).subscribe(
       () => {
         this.toast.success("Técnico cadastrado com sucesso", "Cadastro");

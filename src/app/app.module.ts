@@ -43,6 +43,7 @@ import { CalledCreateComponent } from './pages/called/called-create/called-creat
 import { CalledUpdateComponent } from './pages/called/called-update/called-update.component';
 import { CalledViewComponent } from './pages/called/called-view/called-view.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -93,6 +94,8 @@ import { CalledViewComponent } from './pages/called/called-view/called-view.comp
       closeButton: true,
       progressBar: true,
     }),
+
+  
   ],
   providers: [AuthInterceptorProvider],
   bootstrap: [AppComponent],

@@ -23,7 +23,7 @@ export class ClientCreateComponent implements OnInit {
   };
 
   nome: FormControl = new FormControl(null, Validators.minLength(3));
-  cpf: FormControl = new FormControl(null, Validators.required);
+  cpf: FormControl = new FormControl(null, Validators.minLength(11));
   email: FormControl = new FormControl(null, Validators.email);
   senha: FormControl = new FormControl(null, Validators.minLength(6));
 
@@ -31,11 +31,16 @@ export class ClientCreateComponent implements OnInit {
     private service: ClientService,
     private toast: ToastrService,
     private router: Router
-  ) {}
+  ) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   create(): void {
+
+    if (!this.validaCampos()) {
+      return;
+    }
+
     this.service.create(this.client).subscribe(
       () => {
         this.toast.success("Cliente cadastrado com sucesso", "Cadastro");

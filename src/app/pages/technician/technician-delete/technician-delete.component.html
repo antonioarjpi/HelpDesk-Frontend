@@ -7,10 +7,10 @@
 
         <form class="form">
             <section class="section">
-                <mat-checkbox (click)="addPerfil(0)" [checked]="isAdmin()" class="margin" color="primary" disabled="true">Admin</mat-checkbox>
-                <mat-checkbox (click)="addPerfil(1)" [checked]="isClient()" class="margin" color="primary" disabled="true">Cliente
+                <mat-checkbox (click)="addPerfil(0)" [checked]="admin" class="margin" color="primary" disabled="true">Admin</mat-checkbox>
+                <mat-checkbox (click)="addPerfil(1)" [checked]="client" class="margin" color="primary" disabled="true">Cliente
                 </mat-checkbox>
-                <mat-checkbox (click)="addPerfil(2)" [checked]="isTech()" class="margin" color="primary" disabled="true">Tecnico</mat-checkbox>
+                <mat-checkbox (click)="addPerfil(2)" [checked]="tech" class="margin" color="primary" disabled="true">Tecnico</mat-checkbox>
             </section>
 
             <mat-form-field class="fullWidth" appearance="legacy">
@@ -21,8 +21,7 @@
 
             <mat-form-field class="fullWidth" appearance="legacy">
                 <mat-label>CPF</mat-label>
-                <input [(ngModel)]="technician.cpf" name="cpf" disabled="true" matInput
-                    mask="000.000.000-00">
+                <input [(ngModel)]="technician.cpf" name="cpf" disabled="true" matInput>
                 <mat-icon matSuffix>pin </mat-icon>
             </mat-form-field>
 
@@ -31,13 +30,7 @@
                 <input [(ngModel)]="technician.email" name="email" disabled="true" matInput>
                 <mat-icon matSuffix>email</mat-icon>
             </mat-form-field>
-
-            <mat-form-field class="fullWidth" appearance="legacy">
-                <mat-label>Senha</mat-label>
-                <input [(ngModel)]="technician.password" name="senha" disabled="true" type="password"
-                    matInput>
-                <mat-icon matSuffix>password</mat-icon>
-            </mat-form-field>
+            
             <div class="footer">
                 <button (click)="delete()" class="mat-elevation-z4" mat-flat-button
                     color="primary">Deletar</button>

@@ -103,7 +103,7 @@ export class CalledUpdateComponent implements OnInit {
     } else if (status == "1") {
       return "ANDAMENTO";
     } else {
-      return "ENCERRADO";
+      return "FECHADO";
     }
   }
 

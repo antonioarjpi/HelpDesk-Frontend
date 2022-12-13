@@ -21,9 +21,9 @@ export class ClientDeleteComponent implements OnInit {
     dateCadastre: "",
   };
 
-  admin: number;
-  tech: number;
-  clientRole: number;
+  admin: boolean;
+  tech: boolean;
+  clientRole: boolean;
 
   constructor(
     private service: ClientService,
@@ -39,9 +39,25 @@ export class ClientDeleteComponent implements OnInit {
 
   findById(): void {
     this.service.findById(this.client.id).subscribe((response) => {
-      this.admin = response.profiles.indexOf("ADMIN");
-      this.clientRole = response.profiles.indexOf("CLIENT");
-      this.tech = response.profiles.indexOf("TECH");
+      const profiles = response.profiles;
+      response.profiles = [];
+      let prof = [];
+
+      if (profiles.indexOf('ADMIN') != -1) {
+        prof.push(0);
+        this.admin = true;
+      }
+      if (profiles.indexOf('CLIENT') != -1) {
+        prof.push(1);
+        this.clientRole = true;
+      }
+      if (profiles.indexOf('TECH') != -1) {
+        prof.push(2);
+
+        this.tech = true;
+      }
+      
+      response.profiles = prof;
       this.client = response;
     });
   }
@@ -56,5 +72,13 @@ export class ClientDeleteComponent implements OnInit {
         this.toast.error(ex.error.message);
       }
     );
+  }
+
+  addPerfil(perfil: any): void {
+    if (this.client.profiles.includes(perfil)) {
+      this.client.profiles.splice(this.client.profiles.indexOf(perfil), 1);
+    } else {
+      this.client.profiles.push(perfil);
+    }
   }
 }

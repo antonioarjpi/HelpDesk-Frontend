@@ -41,7 +41,7 @@ export class CalledListComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+      
     });
   }
 
@@ -65,7 +65,7 @@ export class CalledListComponent implements OnInit {
     } else if (status == '1') {
       return "ANDAMENTO";
     } else {
-      return "ENCERRADO";
+      return "FECHADO";
     }
   }
 

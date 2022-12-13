@@ -20,9 +20,9 @@ export class TechnicianDeleteComponent implements OnInit {
     dateCadastre: "",
   };
 
-  admin: number;
-  tech: number;
-  client: number;
+  admin: boolean;
+  tech: boolean;
+  client: boolean;
 
   constructor(
     private service: TechnicianService,
@@ -38,10 +38,25 @@ export class TechnicianDeleteComponent implements OnInit {
 
   findById(): void {
     this.service.findById(this.technician.id).subscribe((response) => {
-      this.admin = response.profiles.indexOf("ADMIN");
-      this.client = response.profiles.indexOf("CLIENT");
-      this.tech = response.profiles.indexOf("TECH");
+      const profiles = response.profiles;
       response.profiles = [];
+      let prof = [];
+
+      if (profiles.indexOf('ADMIN') != -1) {
+        prof.push(0);
+        this.admin = true;
+      }
+      if (profiles.indexOf('CLIENT') != -1) {
+        prof.push(1);
+        this.client = true;
+      }
+      if (profiles.indexOf('TECH') != -1) {
+        prof.push(2);
+
+        this.tech = true;
+      }
+
+      response.profiles = prof;
       this.technician = response;
     });
   }
@@ -66,30 +81,6 @@ export class TechnicianDeleteComponent implements OnInit {
       );
     } else {
       this.technician.profiles.push(perfil);
-    }
-  }
-
-  isAdmin(): boolean {
-    if (this.admin == 1) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-
-  isClient(): boolean {
-    if (this.client == 1) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-
-  isTech(): boolean {
-    if (this.tech == 1) {
-      return true;
-    } else {
-      return false;
     }
   }
 }

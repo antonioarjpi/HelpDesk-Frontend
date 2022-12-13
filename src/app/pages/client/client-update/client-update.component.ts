@@ -25,35 +25,51 @@ export class ClientUpdateComponent implements OnInit {
   cpf: FormControl = new FormControl(null, Validators.required);
   email: FormControl = new FormControl(null, Validators.email);
   senha: FormControl = new FormControl(null, Validators.minLength(6));
-  admin: number;
-  tech: number;
-  clientRole: number;
+  admin: boolean;
+  tech: boolean;
+  clientRole: boolean;
 
   constructor(
     private service: ClientService,
     private toast: ToastrService,
     private router: Router,
     private route: ActivatedRoute
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.client.id = this.route.snapshot.paramMap.get('id');
     this.findById();
-    this.client.profiles = [];
   }
 
   findById(): void {
     this.service.findById(this.client.id).subscribe(response => {
-      this.admin = response.profiles.indexOf('ADMIN');
-      this.clientRole = response.profiles.indexOf('CLIENT');
-      this.tech = response.profiles.indexOf('TECH');
-      console.log(response)
+      const profiles = response.profiles;
+      response.profiles = [];
+      let prof = [];
 
+      if (profiles.indexOf('ADMIN') != -1) {
+        prof.push(0);
+        this.admin = true;
+      }
+      if (profiles.indexOf('CLIENT') != -1) {
+        prof.push(1);
+        this.clientRole = true;
+      }
+      if (profiles.indexOf('TECH') != -1) {
+        prof.push(2);
+
+        this.tech = true;
+      }
+      
+      response.profiles = prof;
       this.client = response;
     })
   }
 
   update(): void {
+    if (!this.validaCampos()) {
+      return;
+    }
     this.service.update(this.client).subscribe(
       () => {
         this.toast.success("Cliente atualizado com sucesso", "Atualização");
