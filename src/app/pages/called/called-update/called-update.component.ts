@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { FormControl, Validators } from "@angular/forms";
+import { UntypedFormControl, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { ToastrService } from "ngx-toastr";
 import { CalledCreate } from "src/app/models/called";
@@ -29,12 +29,12 @@ export class CalledUpdateComponent implements OnInit {
     client: "",
   };
 
-  title: FormControl = new FormControl(null, Validators.minLength(10));
-  status: FormControl = new FormControl(null, Validators.min(0));
-  priority: FormControl = new FormControl(null, Validators.min(0));
-  technician: FormControl = new FormControl(null, Validators.required);
-  client: FormControl = new FormControl(null, Validators.required);
-  observation: FormControl = new FormControl(null, Validators.minLength(3));
+  title: UntypedFormControl = new UntypedFormControl(null, Validators.minLength(10));
+  status: UntypedFormControl = new UntypedFormControl(null, Validators.min(0));
+  priority: UntypedFormControl = new UntypedFormControl(null, Validators.min(0));
+  technician: UntypedFormControl = new UntypedFormControl(null, Validators.required);
+  client: UntypedFormControl = new UntypedFormControl(null, Validators.required);
+  observation: UntypedFormControl = new UntypedFormControl(null, Validators.minLength(3));
 
   constructor(
     private service: CalledService,
