@@ -43,6 +43,7 @@ import { CalledCreateComponent } from './pages/called/called-create/called-creat
 import { CalledUpdateComponent } from './pages/called/called-update/called-update.component';
 import { CalledViewComponent } from './pages/called/called-view/called-view.component';
 import { NgxMaskModule } from 'ngx-mask';
+import { ReportComponent } from './pages/report/report.component';
 
 
 @NgModule({
@@ -63,7 +64,8 @@ import { NgxMaskModule } from 'ngx-mask';
     CalledListComponent,
     CalledCreateComponent,
     CalledUpdateComponent,
-    CalledViewComponent
+    CalledViewComponent,
+    ReportComponent
   ],
   imports: [
     BrowserModule,

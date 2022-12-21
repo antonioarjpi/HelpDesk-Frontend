@@ -1,0 +1,18 @@
+<div class="container">
+    <mat-card>
+        <mat-card-title>Relatórios</mat-card-title>
+        <mat-card-subtitle>Página para relatórios de planilhas</mat-card-subtitle>
+        <mat-card-content>
+            <mat-form-field class="col-12 col-md-6" appearance="outline">
+                <mat-label>Selecione um relatório</mat-label>
+                <mat-select [(ngModel)]="report" required>
+                    <mat-option value="0">Clientes</mat-option>
+                    <mat-option value="1">Técnicos</mat-option>
+                    <mat-option value="2">Chamados</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <br />
+            <button (click)="reportDownload()" [disabled]="[report == null]" mat-raised-button color="primary">Gerar relatório</button>
+        </mat-card-content>
+    </mat-card>
+</div>

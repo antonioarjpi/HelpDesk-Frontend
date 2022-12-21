@@ -15,6 +15,7 @@ import { ClientDeleteComponent } from "./pages/client/client-delete/client-delet
 import { CalledListComponent } from "./pages/called/called-list/called-list.component";
 import { CalledCreateComponent } from "./pages/called/called-create/called-create.component";
 import { CalledUpdateComponent } from "./pages/called/called-update/called-update.component";
+import { ReportComponent } from "./pages/report/report.component";
 
 const routes: Routes = [
   {
@@ -73,6 +74,10 @@ const routes: Routes = [
       {
         path: "chamados/atualizar/:id",
         component: CalledUpdateComponent,
+      },
+      {
+        path: "relatorios",
+        component: ReportComponent,
       },
     ],
   },
