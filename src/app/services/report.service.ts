@@ -12,8 +12,8 @@ export class ReportService {
 
   constructor(private http: HttpClient) { }
 
-  sheetCalleds(): Observable<Blob>{
-    return this.http.get(`${API_CONFIG.baseUrl}/sheets/calleds`, {
+  sheetCalleds(value: any): Observable<Blob>{
+    return this.http.get(`${API_CONFIG.baseUrl}/sheets/${value}`, {
       responseType: 'blob'
     })
   }

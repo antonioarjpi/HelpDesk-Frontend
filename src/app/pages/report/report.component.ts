@@ -14,21 +14,18 @@ export class ReportComponent implements OnInit {
   ngOnInit(): void { }
 
   reportDownload(): void {
-    if (this.report == "0") {
-
-    } else if (this.report == "1") {
-
-    } else if (this.report == "2") {
-      this.sheetCalled();
-    }
-  }
-
-  sheetCalled(): void {
-    this.service.sheetCalleds().subscribe((blob) => {
+    this.service.sheetCalleds(this.report).subscribe((blob) => {
       const a = document.createElement("a");
       const objectUrl = URL.createObjectURL(blob);
       a.href = objectUrl;
-      a.download = "chamados.xlsx";
+      a.download = "";
+      if (this.report == "0") {
+        a.download = "clientes.xlsx";
+      } else if (this.report == "1") {
+        a.download = "técnicos.xlsx";
+      } else if (this.report == "2") {
+        a.download = "chamados.xlsx";
+      }
       a.click();
       URL.revokeObjectURL(objectUrl);
     });
